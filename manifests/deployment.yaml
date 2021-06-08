@@ -18,7 +18,7 @@ spec:
         app: my-app
     spec:
       containers:
-      - image: gcr.io/kubernetes-project-313715/my_app:77f9abe
+      - image: gcr.io/kubernetes-project-313715/my_app:cd293ba
         name: my-app
         resources: {}
 status: {}
