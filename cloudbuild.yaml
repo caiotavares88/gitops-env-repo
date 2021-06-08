@@ -11,16 +11,6 @@ steps:
     cd gitops-env-repo && \
     git checkout production 
 
-# This step generates the new manifest
-- name: 'gcr.io/cloud-builders/gcloud'
-  id: Generate manifest
-  entrypoint: /bin/sh
-  args:
-  - '-c'
-  - |
-     sed -i "s/PROJECT_ID/${PROJECT_ID}/" manifests/deployment.yaml && \
-     sed -i "s/COMMIT_ID/${SHORT_SHA}/" manifests/deployment.yaml
-
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
   args:
